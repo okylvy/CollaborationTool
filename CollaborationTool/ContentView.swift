@@ -11,58 +11,43 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Spacer()
-
-            // TODO button
-            Button(action: {
-                
-            }) {
-                Text("TODO!!")
+/*
+            NavigationView {
+                NavigationLink(destination: TodoList()) {
+                    Text("TODO")
                     .frame(maxWidth: .infinity)
                     .frame(height: 50)
                     .multilineTextAlignment(.center)
                     .background(Color.blue)
                     .foregroundColor(Color.white)
+                    .cornerRadius(15)
+                }
             }
             .padding()
-
-            // Shopping button
-            Button(action: {
-                
-            }) {
-                Text("Shopping")
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 50)
-                    .multilineTextAlignment(.center)
-                    .background(Color.blue)
-                    .foregroundColor(Color.white)
+*/
+            
+            TabView {
+                TodoList()
+                    .tabItem {
+                        Image(systemName: "heart")
+                        Text("TODO")
+                }
+                Shopping()
+                    .tabItem {
+                        Image(systemName: "star")
+                        Text("Buy")
+                }
+                ChatRoom()
+                    .tabItem {
+                        Image(systemName: "heart")
+                        Text("Chat")
+                }
+                Setting()
+                    .tabItem {
+                        Image(systemName: "gear")
+                        Text("Setting")
+                }
             }
-            .padding()
-
-            // Chat button
-            Button(action: {
-                
-            }) {
-                Text("Chat")
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 50)
-                    .multilineTextAlignment(.center)
-                    .background(Color.blue)
-                    .foregroundColor(Color.white)
-            }
-            .padding()
-
-            // Routine button
-            Button(action: {
-                
-            }) {
-                Text("Routine")
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 50)
-                    .multilineTextAlignment(.center)
-                    .background(Color.blue)
-                    .foregroundColor(Color.white)
-            }
-            .padding()
         }
     }
 }
