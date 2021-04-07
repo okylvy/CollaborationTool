@@ -11,21 +11,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Spacer()
-/*
-            NavigationView {
-                NavigationLink(destination: TodoList()) {
-                    Text("TODO")
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 50)
-                    .multilineTextAlignment(.center)
-                    .background(Color.blue)
-                    .foregroundColor(Color.white)
-                    .cornerRadius(15)
-                }
-            }
-            .padding()
-*/
-            
+
             TabView {
                 TodoList()
                     .tabItem {
@@ -37,7 +23,7 @@ struct ContentView: View {
                         Image(systemName: "star")
                         Text("Buy")
                 }
-                ChatRoom()
+                ChatEntry()
                     .tabItem {
                         Image(systemName: "heart")
                         Text("Chat")
